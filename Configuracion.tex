@@ -1,0 +1,59 @@
+% Se define un color gris desde su código RGB
+\definecolor{gris}{RGB}{220,220,220}
+
+\setcounter{secnumdepth}{3} % Para permitir numerar las sub-subsecciones
+
+% Modifica el nombre de los índices al castellano
+\addto\captionsspanish{
+  \renewcommand{\contentsname}{Índice de contenido}
+  \renewcommand{\listfigurename}{Índice de figuras}
+  \renewcommand{\listtablename}{Índice de tablas}
+}
+
+% Formateo de los nombres de los apartados:
+\titleformat{\chapter}[block]
+  {\normalfont\Huge\bfseries\singlespacing}{\thechapter.}{1em}{\Huge}
+\titlespacing*{\chapter}{0pt}{-62pt}{0pt}
+
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries}{\thesection.-}{4pt}{\large}
+\titlespacing*{\section}{0pt}{\baselineskip}{0pt}
+
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\bfseries}{\thesubsection.-}{4pt}{\normalsize}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\titleformat{\subsubsection}[block]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection.-}{4pt}{\normalsize}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+\def\tablename{Tabla}
+
+% Formato de header y footer
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=16mm]{style/logo_epi.png}
+  \hspace{1em} \Longstack[l]{
+    \textbf{UNIVERSIDAD DE OVIEDO} \newline
+    \textbf{Escuela Politécnica de Ingeniería de Gijón}}}
+\fancyhead[R]{\bfseries{Hoja \thepage \hspace{1pt} de \pageref{LastPage}}}
+\fancyfoot[C]{Nombre Apellido1 Apellido2}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Reescritura del plain para que salgan las mismas cabeceras en todas las paginas
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[L]{\includegraphics[height=16mm]{style/logo_epi.png}
+    \hspace{1em} \Longstack[l]{
+      \textbf{UNIVERSIDAD DE OVIEDO} \newline
+      \textbf{Escuela Politécnica de Ingeniería de Gijón}}}
+  \fancyhead[R]{\bfseries{Hoja \thepage \hspace{1pt} de \pageref{LastPage}}}
+  \fancyfoot[C]{Nombre Apellido1 Apellido2}
+  \renewcommand{\headrulewidth}{0pt}% default is 0pt
+  \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
+}
+
+\pagestyle{fancy}
+
+\restylefloat{table}
+

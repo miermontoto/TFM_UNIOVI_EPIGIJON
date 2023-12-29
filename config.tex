@@ -29,26 +29,14 @@
 
 \def\tablename{Tabla}
 
-% Formato de header y footer
-\fancyhf{}
-\fancyhead[L]{\includegraphics[height=16mm]{style/logo_epi.png}
-  \hspace{1em} \Longstack[l]{
-    \textbf{UNIVERSIDAD DE OVIEDO} \newline
-    \textbf{Escuela Politécnica de Ingeniería de Gijón}}}
-\fancyhead[R]{\bfseries{Hoja \thepage \hspace{1pt} de \pageref{LastPage}}}
-\fancyfoot[C]{Nombre Apellido1 Apellido2}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-% Reescritura del plain para que salgan las mismas cabeceras en todas las paginas
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyhead[L]{\includegraphics[height=16mm]{style/logo_epi.png}
+  \fancyhead[L]{\includegraphics[height=16mm]{square.png}
     \hspace{1em} \Longstack[l]{
-      \textbf{UNIVERSIDAD DE OVIEDO} \newline
-      \textbf{Escuela Politécnica de Ingeniería de Gijón}}}
+      \textbf{NOMBRE DE LA ASIGNATURA} \newline
+      \textbf{Título del Trabajo}}}
   \fancyhead[R]{\bfseries{Hoja \thepage \hspace{1pt} de \pageref{LastPage}}}
-  \fancyfoot[C]{Nombre Apellido1 Apellido2}
+  \fancyfoot[C]{Juan Francisco Mier Montoto}
   \renewcommand{\headrulewidth}{0pt}% default is 0pt
   \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
 }
@@ -56,4 +44,3 @@
 \pagestyle{fancy}
 
 \restylefloat{table}
-

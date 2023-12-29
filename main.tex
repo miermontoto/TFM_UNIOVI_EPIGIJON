@@ -24,7 +24,7 @@
 \usepackage{xcolor} % Paquete para trabajar con colores (fondo de celdas, color del texto...)
 \usepackage{pdfpages} % Paquete para incluir páginas de otro PDF directamente
 \usepackage{lipsum} % Paquete para generación de texto
-\input{Configuracion.tex}
+\input{config.tex}
 
 
 \begin{document}
@@ -32,7 +32,7 @@
 \rmfamily % Fuente tipo Romana
 
 % Portada de la memoria
-\input{Portada.tex}
+\input{title.tex}
 
 % Índice de contenido
 \addcontentsline{toc}{chapter}{Índice de contenido} % Añade la referencia al índice de contenido
@@ -62,6 +62,6 @@
 \addcontentsline{toc}{chapter}{Bibliografía} % Añade la referencia al índice de contenido
 
 \bibliographystyle{ieeetr} % Define el estilo de la bibliografía
-\bibliography{Bibliografia} % Indica el archivo que contiene la colección de citas
+\bibliography{biblio} % Indica el archivo que contiene la colección de citas
 
 \end{document}

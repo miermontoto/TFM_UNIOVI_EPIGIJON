@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside, openany]{book}
+\documentclass[12pt, oneside, openany]{book}
 
 \usepackage{mathptmx} % Contiene una fuente similar a Times New Roman
 
@@ -17,13 +17,15 @@
 \usepackage{lastpage}
 \usepackage{stackengine}
 \usepackage{array}
-\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
 \usepackage{float}
+\usepackage{hypcap}
+\usepackage{caption}
+\usepackage{fancyvrb}
 
 \usepackage{hyperref} % Paquete para que las referencias funcionen, y permite introducir links
 \usepackage{xcolor} % Paquete para trabajar con colores (fondo de celdas, color del texto...)
-\usepackage{pdfpages} % Paquete para incluir páginas de otro PDF directamente
-\usepackage{lipsum} % Paquete para generación de texto
 \input{config.tex}
 
 
@@ -36,26 +38,21 @@
 
 % Índice de contenido
 \addcontentsline{toc}{chapter}{Índice de contenido} % Añade la referencia al índice de contenido
+\hypertarget{toc}{}
 \tableofcontents
 \newpage
 
 % Índice de figuras
 \addcontentsline{toc}{chapter}{Índice de figuras}  % Añade la referencia al índice de contenido
+\hypertarget{lof}{}
 \listoffigures
-\newpage
-
-% Índice de tablas
-\addcontentsline{toc}{chapter}{Índice de tablas} % Añade la referencia al índice de contenido
-\listoftables
-
 
 \justify{} % Texto justificado
 \setlength{\parskip}{\baselineskip} % Separación entre párrafos de 1 linea
-\onehalfspacing{} % Interlineado de 1,5
+\onehalfspacing{}
 
 %% El contenido de la memoria, dividido en capítulos:
-\input{sections/intro.tex}
-%% -- INSERTAR SECCIONES --
+\input{sections/1_intro.tex}
 \input{sections/concl.tex}
 
 %% Esto incluirá la bibliografía correctamente en nuestro trabajo
@@ -64,5 +61,7 @@
 
 \bibliographystyle{ieeetr} % Define el estilo de la bibliografía
 \bibliography{biblio} % Indica el archivo que contiene la colección de citas
+
+\nocite{template}
 
 \end{document}

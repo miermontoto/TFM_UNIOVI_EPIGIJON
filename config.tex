@@ -16,15 +16,15 @@
 \titlespacing*{\chapter}{0pt}{-62pt}{0pt}
 
 \titleformat{\section}[block]
-  {\normalfont\large\bfseries}{\thesection.-}{4pt}{\large}
+  {\normalfont\Large\bfseries}{\thesection.}{4pt}{\Large}
 \titlespacing*{\section}{0pt}{\baselineskip}{0pt}
 
 \titleformat{\subsection}[block]
-  {\normalfont\normalsize\bfseries}{\thesubsection.-}{4pt}{\normalsize}
+  {\normalfont\large\bfseries}{\thesubsection.}{4pt}{\normalsize\large}
 \titlespacing*{\subsection}{0pt}{0pt}{0pt}
 
 \titleformat{\subsubsection}[block]
-  {\normalfont\normalsize\bfseries}{\thesubsubsection.-}{4pt}{\normalsize}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection.}{4pt}{\normalsize}
 \titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
 
 \def\tablename{Tabla}
@@ -34,24 +34,41 @@
 \def\title{TÍTULO DEL PROYECTO}
 \def\subject{ASIGNATURA/SUBTÍTULO}
 \def\author{Juan Francisco Mier Montoto}
+\def\target{www.mier.info}
 \def\authorid{UO283319}
-\def\date{diciembre 2023}
+\def\date{mes AÑO}
 \def\org{Escuela Politécnica de Ingeniería de Gijón}
 \def\area{Grado en Ingeniería Informática en Tecnologías de la Información}
 
 \def\ORG{\expandafter\MakeUppercase\expandafter{\org}}
 \def\AREA{\expandafter\MakeUppercase\expandafter{\area}}
+\def\SUBJECT{\expandafter\MakeUppercase\expandafter{\subject}}
+
+\captionsetup{justification=centering}
+\setlength{\headheight}{65pt}
+
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=16mm]{style/square.png}
+  \hspace{1em} \Longstack[l] {
+    \textbf{\SUBJECT} \newline
+    \textbf{\title}}
+  \newline \leftmark{}
+}
+\fancyhead[R]{\bfseries{Hoja \hyperlink{toc}{\thepage}~de~\pageref{LastPage}}}
+\fancyfoot[C]{\href{\target}{\author}}
+\renewcommand{\headrulewidth}{0pt} % default is 0pt
+\renewcommand{\footrulewidth}{0.4pt} % default is 0
 
 \fancypagestyle{plain}{%
   \fancyhf{}
   \fancyhead[L]{\includegraphics[height=16mm]{style/square.png}
     \hspace{1em} \Longstack[l]{
-      \textbf{\subject} \newline
+      \textbf{\SUBJECT} \newline
       \textbf{\title}}}
-  \fancyhead[R]{\bfseries{Hoja \thepage{} \hspace{1pt} de~\pageref{LastPage}}}
-  \fancyfoot[C]{\author}
-  \renewcommand{\headrulewidth}{0pt}% default is 0pt
-  \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
+  \fancyhead[R]{\bfseries{Hoja \hyperlink{toc}{\thepage}~de~\pageref{LastPage}}}
+  \fancyfoot[C]{\href{\target}{\author}}
+  \renewcommand{\headrulewidth}{0pt} % default is 0pt
+  \renewcommand{\footrulewidth}{0.4pt} % default is 0pt
 }
 
 \pagestyle{fancy}
